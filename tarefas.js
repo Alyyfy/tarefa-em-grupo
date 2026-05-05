@@ -1,6 +1,10 @@
 // tarefas.js - Sistema de Lista de Tarefas
 let tarefas = [];
+<<<<<<< HEAD
 let titulo = "SISTEMA DE TAREFAS"; // <- linha do conflito
+=======
+let titulo = "LISTA DE TAREFAS V2"; // <- linha do conflito
+>>>>>>> 79d724fc55b18b9d3f1f0fb9620f424e84c85cb0
 function adicionarTarefa(descricao) {
   tarefas.push({ descricao: descricao, concluida: false });
   console.log("Tarefa adicionada: " + descricao);
@@ -30,6 +34,7 @@ console.log("Removida: " + rem[0].descricao);
 adicionarTarefa("Tarefa B");
 removerTarefa(1); listarTarefas();
 
+<<<<<<< HEAD
 function resumo() {
 let total = tarefas.length;
 let feitas = tarefas.filter(t => t.concluida).length;
@@ -38,3 +43,15 @@ console.log("Total: "+total+" | Feitas: "+feitas);
 }
 // Teste final
 resumo();
+=======
+function concluirTarefa(indice) {
+if (indice < 1 || indice > tarefas.length) {
+console.log("Indice invalido."); return;
+}
+tarefas[indice - 1].concluida = true;
+console.log("Concluida: " + tarefas[indice-1].descricao);
+}
+// Teste
+adicionarTarefa("Tarefa C");
+concluirTarefa(1); listarTarefas();
+>>>>>>> 79d724fc55b18b9d3f1f0fb9620f424e84c85cb0
